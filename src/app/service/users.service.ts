@@ -6,6 +6,8 @@ import {Observable, of} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UsersService {
 
 // Liste des utilisateurs
@@ -18,7 +20,6 @@ export class UsersService {
   getUser(login: string): Observable<UserLdap | undefined> {
     return of (this.users.find(user=> user.login === login));
   }
-
 
   constructor() { }
 }

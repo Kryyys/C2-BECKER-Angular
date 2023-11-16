@@ -75,4 +75,14 @@ export class LdapListComponent implements OnInit, AfterViewInit {
     this.unactiveSelected = $event.checked;
     this.getUsers();
   }
+
+  edit(login: string) : void {
+    this.router.navigate(['users/', login]).then( (e) => {
+      if (!e) {
+        console.error('Navigation has failed !');
+      }
+    });
+  }
+
 }
+

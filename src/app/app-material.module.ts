@@ -14,6 +14,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatInputModule} from "@angular/material/input";
 import {MatSliderModule} from "@angular/material/slider";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
 
@@ -31,7 +34,10 @@ import {MatSliderModule} from "@angular/material/slider";
     MatFormFieldModule,
     MatSlideToggleModule,
     MatInputModule,
-    MatSliderModule
+    MatSliderModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    MatSelectModule
   ],
 })
 export class AppMaterialModule { }
