@@ -14,5 +14,11 @@ export class UsersService {
   getUsers(): Observable<UserLdap[]> {
     return of(this.users);
   }
+
+  getUser(login: string): Observable<UserLdap | undefined> {
+    return of (this.users.find(user=> user.login === login));
+  }
+
+
   constructor() { }
 }
