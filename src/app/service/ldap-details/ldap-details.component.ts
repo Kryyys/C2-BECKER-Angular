@@ -3,14 +3,18 @@ import {ActivatedRoute, Router} from "@angular/router";
 import { Location } from '@angular/common';
 import {UsersService} from "../users.service";
 import {FormBuilder} from "@angular/forms";
+import {UserLdap} from "../../models/user-ldap";
 
 @Component({
   selector: 'app-ldap-details',
   templateUrl: './ldap-details.component.html',
   styleUrls: ['./ldap-details.component.css']
 })
-
 export class LdapDetailsComponent implements OnInit {
+
+  user: UserLdap | undefined;
+  processLoadRunning = false;
+  processValidateRunning = false;
 
   userForm = this.fb.group( {
     login: [''],
@@ -19,7 +23,7 @@ export class LdapDetailsComponent implements OnInit {
     passwordGroup: this.fb.group( {
       password: [''],
       confirmPassword: ['']
-    });
+    }),
     mail: {value:'', disabled: true}
   });
 
@@ -30,7 +34,7 @@ export class LdapDetailsComponent implements OnInit {
     private router: Router
     ) { }
 
-  ng0Init(): void {
+  ngOnInit(): void {
     this.getUser();
   }
 

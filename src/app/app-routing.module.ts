@@ -8,7 +8,7 @@ import {LdapDetailsComponent} from "./service/ldap-details/ldap-details.componen
 
 const routes: Routes = [
   { path: 'users/list', component: LdapListComponent },
-  { path: 'user/:id', component: LdapDetailsComponent },
+  { path: 'users/:id', component: LdapDetailsComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
