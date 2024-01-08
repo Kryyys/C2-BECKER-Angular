@@ -12,6 +12,7 @@ import {AppMaterialModule} from "../app-material.module";
 import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryUsersService} from "../service/in-memory-users.service";
+import {NavbarComponent} from "./navbar/navbar.component";
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {InMemoryUsersService} from "../service/in-memory-users.service";
     LdapAddComponent,
     LdapEditComponent,
     AlertComponent,
+      NavbarComponent,
   ],
   imports: [
     CommonModule,

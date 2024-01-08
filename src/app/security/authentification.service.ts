@@ -45,7 +45,7 @@ export class AuthentificationService {
     sessionStorage.removeItem('id_token');
   }
 
-  loginWithRole(username, password, role) {
+  loginWithRole(username: string, password: string, role: string) {
     const response: AuthentificationResponse
       = {status: true, message: 'HTTP 200', token: 'atoken'};
     AuthentificationService.setToken('token');

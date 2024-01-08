@@ -21,7 +21,6 @@ import { LoginComponent } from './security/login/login.component';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    NavbarComponent,
     LoginComponent,
   ],
   imports: [
