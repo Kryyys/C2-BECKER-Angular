@@ -16,20 +16,16 @@ import { LdapManagementModule } from './ldap-management/ldap-management.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LdapListComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    LdapEditComponent,
-    LdapAddComponent,
-    AlertComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AppMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    LdapManagementModule
+    AppMaterialModule,
+    LdapManagementModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
