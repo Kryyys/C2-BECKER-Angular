@@ -46,14 +46,14 @@ export class LdapEditComponent extends LdapDetailsComponent implements OnInit {
 
   private getUser() : void {
       const id = Number(this.route.snapshot.paramMap.get('id'));
-      const login = this.route.snapshot.paramMap.get('id');
+      // const login = this.route.snapshot.paramMap.get('id');
 
-    if (login === null) {
+    if (id === null) {
       console.error("Je ne retrouve pas l'id de l'utilisateur");
       return;
     }
 
-    this.usersService.getUser(login).subscribe( {
+    this.usersService.getUser(id).subscribe( {
     next: (user) => {
       this.user = user;
       this.copyUserToFormControl();
@@ -62,7 +62,7 @@ export class LdapEditComponent extends LdapDetailsComponent implements OnInit {
       error: (err) => {
       this.processValidateRunning = false;
       this.errorMessage = "L'utilisateur n'existe pas !";
-      console.error('Obtention utilisateir', err);
+      console.error('Obtention utilisateur', err);
       this.snackBar.open('Utilisateur non trouvé !', 'X');
       }
     })
