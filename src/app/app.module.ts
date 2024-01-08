@@ -3,12 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LdapListComponent } from './ldap-list/ldap-list.component';
+import { LdapListComponent } from './ldap-management/ldap-list/ldap-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppMaterialModule } from './app-material.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LdapDetailsComponent } from './service/ldap-details/ldap-details.component';
+import { NavbarComponent } from './ldap-management/navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LdapEditComponent } from './ldap-management/ldap-edit/ldap-edit.component';
+import { LdapAddComponent } from './ldap-management/ldap-add/ldap-add.component';
+import { AlertComponent } from './share/alert/alert.component';
+import { LdapManagementModule } from './ldap-management/ldap-management.module';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     LdapListComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    LdapDetailsComponent
+    LdapEditComponent,
+    LdapAddComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LdapManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
