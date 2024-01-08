@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {UserLdap} from "../models/user-ldap";
 import {LDAP_USERS} from "../models/ldap-mock-data";
 import {Observable, of, throwError} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,8 @@ import {Observable, of, throwError} from "rxjs";
 
 
 export class UsersService {
+
+  private usersUrl = '';
 
 // Liste des utilisateurs
   users: UserLdap[] = LDAP_USERS;
@@ -45,5 +49,8 @@ export class UsersService {
     return throwError(() => new Error ('Utilisateur non trouvé'));
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.usersUrl = environment.usersApiUrl;
+  }
 }
+

@@ -45,7 +45,8 @@ export class LdapEditComponent extends LdapDetailsComponent implements OnInit {
     }
 
   private getUser() : void {
-    const login = this.route.snapshot.paramMap.get('id');
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      const login = this.route.snapshot.paramMap.get('id');
 
     if (login === null) {
       console.error("Je ne retrouve pas l'id de l'utilisateur");
